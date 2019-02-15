@@ -5,6 +5,7 @@ const p2Display = document.querySelector("#p2Display");
 const resetButton = document.querySelector("#resetButton");
 const numInput = document.querySelector("input");
 const p = document.querySelector("p");
+const updateBtn = document.querySelector("#update");
 let winningScoreDisplay = document.querySelector("p span");
 
 let p1Score = 0; 
@@ -59,7 +60,8 @@ resetButton.addEventListener('click', function() {
     reset();
 });
 
-numInput.addEventListener('change', function() {
+updateBtn.addEventListener('click', function() {
     winningScoreDisplay.textContent = numInput.value;
-    winningScore = Number(numInput.value);
+    winningScore = Number(numInput.value); //turn numInput value into a string so the conditional statement with ==== will work
+    reset();
 })
